@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="2025 AHA ACLS Bradycardia 情境題組：4 個展開式病例、18 個決策點。">
+<title>心搏過緩情境題組 · 2025 AHA Bradycardia</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1FAC0;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+:root{
+  --ground:#F5F2F0; --surface:#FFFFFF; --surface-2:#F0EAE7;
+  --ink:#1F1614; --ink-2:#55453F; --ink-3:#7E6E68;
+  --rule:#E3D8D3; --rule-soft:#EEE6E2;
+  --accent:#A8231C; --accent-deep:#7E1712; --accent-wash:#F7E3E0;
+  --amber:#9A6300; --amber-wash:#F6EBD3;
+  --do:#0B6B4F; --do-wash:#DFF0E7;
+  --reasonable:#1D6595; --reason-wash:#DEEBF5;
+  --consider:#8A6410; --consider-wash:#F4EAD3;
+  --nobenefit:#8A4A1E; --nobenefit-wash:#F3E4D8;
+  --harm:#A33529; --harm-wash:#F6E3E0;
+  --tbc:#B4006E;
+  --tox-bg:#EDE3F6; --tox-fg:#5B3A88; --erc-bg:#DFF0EE; --erc-fg:#0B6E6E;
+  --on-accent:#fff;
+  --shadow:0 1px 2px rgba(31,22,20,.05),0 8px 24px -12px rgba(31,22,20,.16);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#140E0D; --surface:#1C1513; --surface-2:#251C19;
+  --ink:#F0E8E5; --ink-2:#BCA9A2; --ink-3:#8E7C76;
+  --rule:#3A2D29; --rule-soft:#2C2220;
+  --accent:#F07A6E; --accent-deep:#F7A59C; --accent-wash:#3A1B18;
+  --amber:#E0AE52; --amber-wash:#352914;
+  --do:#4FBF8B; --do-wash:#143023;
+  --reasonable:#6FB2E0; --reason-wash:#12283A;
+  --consider:#D6AA4B; --consider-wash:#332813;
+  --nobenefit:#E09A62; --nobenefit-wash:#36241A;
+  --harm:#E68A7B; --harm-wash:#39201C;
+  --tbc:#FF6FC0;
+  --tox-bg:#2A2038; --tox-fg:#C8A8F0; --erc-bg:#123030; --erc-fg:#6FD3C6;
+  --on-accent:#1C1513;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+}}
+:root[data-theme="dark"]{
+  --ground:#140E0D; --surface:#1C1513; --surface-2:#251C19;
+  --ink:#F0E8E5; --ink-2:#BCA9A2; --ink-3:#8E7C76;
+  --rule:#3A2D29; --rule-soft:#2C2220;
+  --accent:#F07A6E; --accent-deep:#F7A59C; --accent-wash:#3A1B18;
+  --amber:#E0AE52; --amber-wash:#352914;
+  --do:#4FBF8B; --do-wash:#143023;
+  --reasonable:#6FB2E0; --reason-wash:#12283A;
+  --consider:#D6AA4B; --consider-wash:#332813;
+  --nobenefit:#E09A62; --nobenefit-wash:#36241A;
+  --harm:#E68A7B; --harm-wash:#39201C;
+  --tbc:#FF6FC0;
+  --tox-bg:#2A2038; --tox-fg:#C8A8F0; --erc-bg:#123030; --erc-fg:#6FD3C6;
+  --on-accent:#1C1513;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"Noto Sans TC","PingFang TC",system-ui,sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);overflow-wrap:break-word}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.mono,code{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-weight:900;font-size:clamp(1.6rem,6vw,2.4rem);line-height:1.25}
+h2{font-weight:700;font-size:clamp(1.25rem,4.5vw,1.6rem);line-height:1.35}
+h3{font-weight:700;font-size:1.08rem;line-height:1.4}
+p{margin:0}
+a{color:var(--accent-deep);text-underline-offset:2px}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 64px}
+/* top bar */
+.bar{position:sticky;top:0;z-index:10;background:var(--ground);border-bottom:1px solid var(--rule)}
+.bar-in{max-width:760px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.bar .brand{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-right:auto;white-space:nowrap}
+.bar .score{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-2);white-space:nowrap}
+.ibtn{all:unset;box-sizing:border-box;cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:12px;min-height:36px;padding:6px 10px;border:1px solid var(--rule);border-radius:4px;background:var(--surface);color:var(--ink-2);display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.ibtn:hover{border-color:var(--accent);color:var(--accent)}
+.ibtn:focus-visible{outline:2px solid var(--accent)}
+/* masthead */
+.mast{display:flex;flex-direction:column;gap:12px;padding:24px 0 8px}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.dek{font-size:1.02rem;color:var(--ink-2);border-left:3px solid var(--accent);padding-left:14px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:13px;color:var(--ink-2);align-items:center}
+/* tags (same as student page) */
+.cor,.loe,.src,.tbc,.inf{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.04em;padding:2px 7px;border-radius:999px;white-space:nowrap;vertical-align:1.5px;line-height:1.5}
+.cor-1{background:var(--do-wash);color:var(--do)}
+.cor-2a{background:var(--reason-wash);color:var(--reasonable)}
+.cor-2b{background:var(--consider-wash);color:var(--consider)}
+.cor-3n{background:var(--nobenefit-wash);color:var(--nobenefit)}
+.cor-3h{background:var(--harm-wash);color:var(--harm)}
+.loe{background:transparent;color:var(--ink-3);border:1px solid var(--rule);font-weight:500;border-radius:3px}
+.src{border-radius:3px;font-weight:500;font-size:10px;padding:1px 6px;margin-left:4px}
+.s-aha25{background:var(--accent-wash);color:var(--accent-deep)}
+.s-alg25{background:var(--accent-wash);color:var(--accent-deep);border:1px dashed var(--accent)}
+.s-aha20{background:var(--surface-2);color:var(--ink-3)}
+.s-tox23{background:var(--tox-bg);color:var(--tox-fg)}
+.s-erc{background:var(--erc-bg);color:var(--erc-fg)}
+.s-edu{background:var(--surface-2);color:var(--ink-2)}
+.s-p10{background:var(--accent-wash);color:var(--accent-deep);border:1px solid var(--accent)}
+.tbc{color:var(--tbc);border:1.5px dashed var(--tbc);background:transparent;border-radius:3px}
+.inf{color:var(--amber);border:1px dashed var(--amber);background:transparent;border-radius:3px}
+blockquote{margin:0;padding:8px 12px;border-left:3px solid var(--rule);background:var(--surface-2);font-size:13.5px;color:var(--ink-2);border-radius:0 3px 3px 0}
+blockquote[lang="en"]{font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.6;overflow-wrap:anywhere}
+/* home: case cards */
+.cases{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));margin-top:8px}
+.ccard{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:6px;background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:4px;padding:14px 16px;box-shadow:var(--shadow);min-height:44px}
+.ccard:hover{border-color:var(--accent)}
+.ccard:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ccard.c-ok{border-left-color:var(--do)} .ccard.c-tox{border-left-color:var(--tox-fg)} .ccard.c-warn{border-left-color:var(--amber)}
+.ccard .no{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;color:var(--ink-3);letter-spacing:.08em}
+.ccard h3{font-size:1.08rem}
+.ccard p{font-size:14px;color:var(--ink-2)}
+.prog{display:flex;gap:4px;margin-top:4px}
+.prog i{flex:1;height:6px;border-radius:3px;background:var(--rule)}
+.prog i.ok{background:var(--do)} .prog i.no{background:var(--harm)}
+.prog-t{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pbtn{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 18px;border-radius:6px;background:var(--accent);color:var(--on-accent);font-weight:700;font-size:15px;text-align:center}
+.pbtn:hover{background:var(--accent-deep)}
+.pbtn[disabled]{opacity:.4;cursor:not-allowed}
+.pbtn.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--rule)}
+.pbtn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+.pbtn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.note{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--amber);border-radius:3px;padding:12px 14px;font-size:14px;color:var(--ink-2);display:flex;flex-direction:column;gap:6px}
+.note-lbl{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+/* play */
+.casehead{display:flex;flex-direction:column;gap:4px;padding:18px 0 10px;border-bottom:2px solid var(--ink);margin-bottom:14px}
+.casehead .no{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--ink-3)}
+.timeline{display:flex;flex-direction:column;gap:0;margin:0 0 14px;padding:0;list-style:none}
+.timeline li{position:relative;padding:0 0 10px 22px;font-size:14.5px;color:var(--ink-2)}
+.timeline li::before{content:"";position:absolute;left:5px;top:9px;width:8px;height:8px;border-radius:50%;background:var(--rule)}
+.timeline li::after{content:"";position:absolute;left:8.5px;top:20px;bottom:0;width:1px;background:var(--rule)}
+.timeline li:last-child::after{display:none}
+.timeline li.now{color:var(--ink);font-weight:500}
+.timeline li.now::before{background:var(--accent);box-shadow:0 0 0 3px var(--accent-wash)}
+.timeline .tl{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-3);display:block;letter-spacing:.06em}
+.qcard{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+.qmeta{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);letter-spacing:.06em}
+.qmeta .multi{color:var(--accent);font-weight:600}
+.qtext{font-size:1.08rem;font-weight:700;line-height:1.55}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:32px minmax(0,1fr);gap:10px;align-items:start;min-height:52px;padding:12px;border:1.5px solid var(--rule);border-radius:6px;background:var(--surface);font-size:15px;line-height:1.55;color:var(--ink)}
+.opt:hover:not([aria-disabled="true"]){border-color:var(--accent)}
+.opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.opt .mk{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--rule);font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;color:var(--ink-2)}
+.opt.multi .mk{border-radius:4px}
+.opt.sel{border-color:var(--accent);background:var(--accent-wash)}
+.opt.sel .mk{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.opt.right{border-color:var(--do);background:var(--do-wash)}
+.opt.right .mk{background:var(--do);border-color:var(--do);color:var(--on-accent)}
+.opt.wrong{border-color:var(--harm);background:var(--harm-wash)}
+.opt.wrong .mk{background:var(--harm);border-color:var(--harm);color:var(--on-accent)}
+.opt.missed{border-style:dashed;border-color:var(--do)}
+.opt[aria-disabled="true"]{cursor:default}
+.opt .flag{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;margin-top:2px}
+.opt.right .flag{color:var(--do)} .opt.wrong .flag{color:var(--harm)}
+.fb{border-top:1px dashed var(--rule);padding-top:12px;display:flex;flex-direction:column;gap:10px;font-size:14.5px}
+.verdict{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:1rem}
+.verdict.ok{color:var(--do)} .verdict.no{color:var(--harm)}
+.why{display:flex;flex-direction:column;gap:8px}
+.why ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:4px}
+.secs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;color:var(--ink-3)}
+.secs a{font-family:"IBM Plex Mono",monospace;font-size:11.5px;border:1px solid var(--rule);border-radius:999px;padding:3px 10px;text-decoration:none;color:var(--accent-deep);background:var(--surface)}
+.secs a:hover{border-color:var(--accent)}
+.nav{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap;margin-top:14px}
+.nav .pbtn{flex:1 1 140px}
+.hint{font-size:12.5px;color:var(--ink-3)}
+/* results */
+.big{font-family:"IBM Plex Mono",monospace;font-size:3rem;font-weight:600;color:var(--accent);line-height:1}
+.statrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px}
+.stat{background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:12px;display:flex;flex-direction:column;gap:2px}
+.stat .n{font-family:"IBM Plex Mono",monospace;font-size:1.4rem;font-weight:600;color:var(--ink)}
+.stat .l{font-size:13px;color:var(--ink-2)}
+.review{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.review li{background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--rule);border-radius:4px;padding:10px 12px;font-size:14px;display:flex;flex-direction:column;gap:4px}
+.review li.ok{border-left-color:var(--do)} .review li.no{border-left-color:var(--harm)}
+.review .rh{display:flex;gap:8px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
+.review .rid{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3)}
+.review .ans{color:var(--ink-2)}
+.review .mark{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600}
+.review li.ok .mark{color:var(--do)} .review li.no .mark{color:var(--harm)} .review li.na .mark{color:var(--ink-3)}
+.takeaways{list-style:none;padding:0;margin:0;counter-reset:t;display:grid;gap:8px}
+.takeaways li{counter-increment:t;display:grid;grid-template-columns:40px minmax(0,1fr);background:var(--surface);border:1px solid var(--rule);border-radius:4px;overflow:hidden;font-size:14.5px}
+.takeaways li::before{content:counter(t,decimal-leading-zero);background:var(--accent);color:var(--on-accent);font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:13px;display:grid;place-items:center}
+.takeaways li div{padding:10px 12px}
+section.view{display:flex;flex-direction:column;gap:16px}
+section.view[hidden]{display:none}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-3);display:flex;flex-direction:column;gap:6px}
+/* ===== host mode (projector) ===== */
+body.host{font-size:20px}
+body.host .wrap,body.host .bar-in{max-width:1240px}
+body.host .qtext{font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.45}
+body.host .opt{font-size:clamp(1.05rem,1.9vw,1.45rem);min-height:64px;padding:14px 16px;grid-template-columns:44px minmax(0,1fr)}
+body.host .opt .mk{width:38px;height:38px;font-size:17px}
+body.host .timeline li{font-size:clamp(.95rem,1.6vw,1.2rem)}
+body.host .timeline li.now{font-size:clamp(1.05rem,1.9vw,1.4rem)}
+body.host .fb{font-size:clamp(.95rem,1.5vw,1.15rem)}
+body.host .casehead h2{font-size:clamp(1.4rem,2.6vw,2rem)}
+body.host .qcard{padding:22px 26px}
+body.host blockquote[lang="en"]{font-size:.85em}
+body.host .src,body.host .cor,body.host .loe,body.host .tbc,body.host .inf{font-size:.62em}
+@media (max-width:420px){.bar .brand{display:none}.bar .score{margin-right:auto}}
+.hostkeys{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3)}
+.hostkeys kbd{font-family:inherit;border:1px solid var(--rule);border-bottom-width:2px;border-radius:3px;padding:0 5px;background:var(--surface)}
+@media (min-width:1000px){
+  body.host .playgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,8fr);gap:28px;align-items:start}
+  body.host .timeline{position:sticky;top:70px}
+}
+@media (prefers-reduced-motion:no-preference){.qcard{animation:rise .25s ease-out}@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}}
+@media print{.bar,.nav{display:none!important}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="bar-in">
+  <span class="brand" id="brand">Brady 2025 · 情境題</span>
+  <span class="score" id="scoreBar" aria-live="polite"></span>
+  <button class="ibtn" type="button" id="homeBtn" aria-label="回到病例列表">☰ 病例</button>
+  <button class="ibtn" type="button" id="themeBtn" aria-label="切換深淺色">◐ 自動</button>
+</div></div>
+
+<div class="wrap">
+
+<!-- HOME -->
+<section class="view" id="vHome">
+  <header class="mast">
+    <p class="kicker">2025 AHA ACLS · Bradycardia · 情境題組</p>
+    <h1>慢，要不要治？<br>4 個病例、18 個決策點</h1>
+    <p class="dek" id="modeDek">一題一題往下走，選完立刻看對錯、解說和出處。內容全部出自課程學員版教學頁。</p>
+    <div class="legend" aria-label="標籤圖例">
+      <span><span class="cor cor-1">COR 1</span> 應該做</span>
+      <span><span class="cor cor-2a">2a</span> 合理</span>
+      <span><span class="cor cor-2b">2b</span> 可考慮</span>
+      <span><span class="loe">LOE</span> 證據等級</span>
+      <span><span class="tbc">待查證</span> 找不到原文依據</span>
+      <span><span class="inf">非指引</span> 教材／推論</span>
+    </div>
+  </header>
+  <div class="cases" id="caseList"></div>
+  <div class="row">
+    <button class="pbtn" type="button" id="resumeBtn">從頭開始</button>
+    <button class="pbtn ghost" type="button" id="resultBtn">看結算</button>
+  </div>
+  <div class="row" id="modeRow"></div>
+</section>
+
+<!-- PLAY -->
+<section class="view" id="vPlay" hidden>
+  <div class="casehead"><span class="no" id="caseNo"></span><h2 id="caseTitle"></h2></div>
+  <div class="playgrid">
+    <ol class="timeline" id="timeline" aria-label="病例經過"></ol>
+    <div>
+      <div class="qcard" id="qcard"></div>
+      <div class="nav" id="qnav"></div>
+      <p class="hint" id="hostHint" hidden><span class="hostkeys"><kbd>Space</kbd> 揭曉　<kbd>→</kbd> 下一題　<kbd>←</kbd> 上一題　<kbd>1</kbd>–<kbd>4</kbd> 標記選項　<kbd>H</kbd> 病例列表</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- RESULT -->
+<section class="view" id="vResult" hidden>
+  <header class="mast">
+    <p class="kicker">結算</p>
+    <h2>你的成績</h2>
+  </header>
+  <div class="statrow" id="stats"></div>
+  <h3>每題回顧</h3>
+  <ul class="review" id="review"></ul>
+  <h3 id="tenH">帶得走的十句話 <span class="src s-edu">學員版 #ten</span></h3>
+  <ol class="takeaways" id="ten">
+    <li><div>數字只是開場：algorithm 寫「通常 &lt; 50/min」，處置看灌流。<span class="src s-alg25">ALG25</span></div></li>
+    <li><div>五個失代償：低血壓、急性意識改變、休克、缺血性胸痛、急性心衰竭。<span class="src s-alg25">ALG25</span></div></li>
+    <li><div>先顧呼吸道、氧氣、通氣——缺氧會讓心跳慢，也讓起搏失敗。<span class="src s-aha25">AHA25</span></div></li>
+    <li><div>Atropine 1 mg IV，每 3–5 分鐘，總量 3 mg。<span class="cor cor-2a">2a</span><span class="src s-alg25">ALG25</span></div></li>
+    <li><div>寬 QRS 高度 AVB：別指望 atropine。<span class="src s-erc">ERC25</span></div></li>
+    <li><div>無效：TCP 和／或 dopamine 5–20 mcg/kg/min 或 epi 2–10 mcg/min，同時準備 TVP。<span class="cor cor-2b">2b</span><span class="src s-aha25">AHA25</span></div></li>
+    <li><div>有 spike 不等於有心跳：要 QRS＋T 波，還要脈搏與起搏速率一致。<span class="src s-aha25">AHA25</span></div></li>
+    <li><div>清醒病人起搏會痛，鎮靜止痛並盯呼吸。<span class="src s-aha25">AHA25</span></div></li>
+    <li><div>一邊穩定，一邊找原因：缺血、藥物、電解質、缺氧。<span class="cor cor-1">1</span><span class="src s-aha25">AHA25</span></div></li>
+    <li><div>β-blocker／CCB 中毒：high-dose insulin 是 COR 1；digoxin：Fab 是 COR 1。atropine、pacing 已不在 2025 中毒推薦表裡——別指望它們救中毒性休克。<span class="src s-p10">AHA25-P10 §21</span></div></li>
+  </ol>
+  <div class="row">
+    <button class="pbtn ghost" type="button" id="backHome2">回病例列表</button>
+    <button class="pbtn ghost" type="button" id="resetBtn">清除進度、重新作答</button>
+  </div>
+</section>
+
+<footer>
+  <p><strong>教學用，不取代臨床判斷。</strong>劑量與處置請依指引原文、院內規範與病人狀況決定。病例為虛構情境，生命徵象僅供教學。</p>
+  <p>內容來源：<a href="https://u101001702.github.io/acls-bradycardia-2025/" target="_blank" rel="noopener">2025 AHA Bradycardia 學員版教學頁</a>（各題「出處」連結到該頁章節）。</p>
+  <p>不收集任何個人資料、沒有後端；作答進度只存在你這台裝置的瀏覽器（localStorage），可在結算頁清除。</p>
+</footer>
+</div>
+
+<script>
+(function(){
+'use strict';
+var BASE='https://u101001702.github.io/acls-bradycardia-2025/';
+var SECN={changes:'01 改了什麼',define:'02 定義',flow:'03 決策流程',recs:'04 推薦表',drugs:'05 劑量表',atropine:'06 Atropine 何時無效',special:'07 特殊情境',tox:'07 中毒',tcp:'08 經皮起搏',tvp:'09 經靜脈起搏',causes:'10 可逆病因',ten:'11 十句話',tw:'12 台灣落地'};
+function S(k,t){return '<span class="src s-'+k+'">'+t+'</span>';}
+function C(k,t){return '<span class="cor cor-'+k+'">'+t+'</span>';}
+function L(t){return '<span class="loe">'+t+'</span>';}
+function TBC(t){return '<span class="tbc">'+(t||'待查證')+'</span>';}
+function INF(t){return '<span class="inf">'+(t||'非指引')+'</span>';}
+function EN(t,src){return '<blockquote lang="en">"'+t+'"'+(src||'')+'</blockquote>';}
+
+/* ===== 題庫：全部內容出自 bradycardia-2025-v2-student.html ===== */
+var CASES=[
+{id:'A',cls:'c-ok',title:'夜班的 HR 42',sub:'無症狀竇性過緩：不用治，先看情境',
+ intro:'內科病房夜班凌晨，監視器響：22 歲大學游泳校隊，因蜂窩性組織炎住院打抗生素。熟睡中 HR 42，竇性節律。',
+ steps:[
+ {id:'A1',scene:'你到床邊叫醒他。他說沒有不舒服，意識清楚，血壓正常。',
+  q:'你第一個要回答的問題是什麼？',
+  opts:['HR 已經低於 50，先給 atropine 1 mg 再說','這個心跳對「這個人、這個情境」合理嗎？有沒有灌流不足？','先貼經皮起搏貼片備用','立刻會診心臟科放經靜脈起搏'],
+  ans:[1],
+  why:'<p>Algorithm 第一框就是先看情境再看數字。</p>'+EN('Assess appropriateness for clinical condition. Heart rate typically &lt;50/min if bradyarrhythmia.',S('alg25','ALG25 Box 1'))+
+   '<p>穩定（無症狀）的過緩，運動員、睡眠中可以是正常的。'+S('aha25','AHA25')+'</p><p>反過來說：敗血性休克的人 HR 60 可能已經「太慢」。</p>',
+  sec:['flow','define']},
+ {id:'A2',scene:'你還是照流程把 Box 2 問一遍。',
+  q:'Algorithm Box 2 判斷「心肺失代償」的五個問題，下列哪一項「不在」其中？',
+  opts:['低血壓','急性意識改變','缺血性胸痛','心跳低於 50/min'],
+  ans:[3],
+  why:'<p>五個問題：Hypotension、Acutely altered mental status、Signs of shock、Ischemic chest discomfort、Acute heart failure。'+S('alg25','ALG25 Box 2')+'</p><p>心跳數字本身不是失代償。有任一項 → Box 3；都沒有 → Box 7。</p>',
+  sec:['flow','ten']},
+ {id:'A3',scene:'學弟在旁邊問：「到底 < 60 還是 < 50 才算過緩？」',
+  q:'依 AHA 2025，哪個說法最正確？',
+  opts:['一律以 < 60/min 定義，2025 沒有改','歷史上定義為 < 60/min；後來改採較低的 < 50/min 切點，algorithm 寫「通常 < 50/min」','2025 新定義為 < 40/min','只要低於門檻，就一定要治療'],
+  ans:[1],
+  why:EN('Bradycardia has historically been defined as a ventricular heart rate of less than 60/min. However, … a lower threshold of less than 50/min, reflecting population studies that commonly use this lower cutoff.',S('aha25','AHA25 §19 Synopsis'))+
+   '<p>數字只是開場：Box 1 原文 "Assess appropriateness for clinical condition. Heart rate typically &lt;50/min if bradyarrhythmia."，要不要處置看有沒有失代償。'+S('alg25','ALG25 Box 1')+'</p><p>2020 版寫的是「generally defined as … less than 60/min」。'+S('aha25','AHA25')+'</p>',
+  sec:['define','changes']},
+ {id:'A4',scene:'五個問題都是「沒有」。他想繼續睡。',
+  q:'依 2025 algorithm 穩定支（Box 7），下列哪些是圖上寫的處置？',multi:true,
+  opts:['找出並處理潛在原因','預防性先給一劑 atropine','考慮給氧','做 12 導程心電圖'],
+  ans:[0,2,3],
+  why:'<p>Box 7 原文：Identify and treat underlying causes、Support ABCs、Consider oxygen、Obtain 12-lead ECG、Observe。'+S('alg25','ALG25 Box 7')+'</p>'+
+   '<p>可逆病因評估 '+C('1','COR 1')+' '+L('C-EO')+S('aha25','AHA25 #1')+'</p>'+
+   '<p>2020→2025 小改變：圖上不再寫「IV access」和「12-Lead ECG if available; don’t delay therapy」，只剩穩定支的 <code>Obtain 12-lead ECG</code>。'+S('alg25','ALG25')+S('aha20','ALG20')+'</p><p><strong>這一例的重點：慢，不一定要治。</strong></p>',
+  sec:['flow','changes']}
+ ]},
+{id:'B',cls:'',title:'HR 34 的完全房室阻斷',sub:'症狀性高度 AVB＋低血壓：atropine → 無效 → 滴注／TCP → TVP',
+ intro:'68 歲男性，早上起床頭暈、差點昏倒，家人送來急診。檢傷：HR 34、BP 76/42、SpO₂ 88%（室內空氣），四肢濕冷，回答問題變慢。12 導程：完全房室阻斷，寬 QRS 逸搏節律。',
+ steps:[
+ {id:'B1',scene:'Box 2 五問：低血壓「是」、急性意識改變「是」。',
+  q:'你的第一步？',
+  opts:['先照會心臟科，等評估完再處理','維持呼吸道、給氧、必要時正壓通氣，接心肺監視器、摸脈搏','既然是完全房室阻斷，跳過其他步驟直接放經靜脈起搏','先觀察，看會不會自己恢復'],
+  ans:[1],
+  why:'<p>Box 3（失代償支）原文：Maintain patent airway and provide oxygen／Assist breathing with positive-pressure ventilation as necessary／Attach cardiorespiratory monitor／Monitor pulse。'+S('alg25','ALG25 Box 3')+'</p>'+
+   '<p>為什麼先顧氧氣：缺氧本身會造成心搏過緩，也和 TCP 失敗、死亡率增加有關（Smida 2024）。'+S('aha25','AHA25')+'</p>'+
+   '<p>「正壓通氣」與「Monitor pulse」是 2025 新加的字樣。支持後仍慢、仍失代償（Box 4）→ Box 5。</p>',
+  sec:['flow','changes']},
+ {id:'B2',scene:'給氧後 SpO₂ 上來了，但 HR 仍 34、血壓仍低、意識仍差（Box 4：仍失代償）。IV 已建立。',
+  q:'依 AHA 2025 algorithm，atropine 怎麼給？',
+  opts:['1 mg IV bolus，每 3–5 分鐘重複，總量 3 mg','500 μg IV，每 3–5 分鐘，總量 3 mg','1–2 mg，每 5 分鐘加倍','低於 0.5 mg 慢慢推，比較安全'],
+  ans:[0],
+  why:'<p>Atropine 1 mg IV bolus，q3–5 min，總量 3 mg。'+S('alg25','ALG25')+' '+C('2a','2a')+' '+L('B-NR')+S('aha25','AHA25 #2')+'</p>'+
+   '<ul><li>500 μg 是 <strong>ERC 2025</strong> 的首劑，和 AHA 不同；學員版不選邊。'+S('erc','ERC25')+'</li>'+
+   '<li>「1–2 mg，每 5 分鐘加倍」在 Part 10 Table 4 只用於<strong>有機磷／carbamate</strong>。'+S('p10','AHA25-P10')+'</li>'+
+   '<li>「低於 0.5 mg 比較安全」不是 AHA 2025 的建議；algorithm 的首劑就是 1 mg。'+S('alg25','ALG25')+'</li></ul>'+
+   '<p>注意這位是<strong>寬 QRS</strong> 的 AV block：ERC 2025 直接寫 "Do not give atropine to patients with high-degree atrioventricular block and wide QRS."'+S('erc','ERC25')+' AHA 2025 Part 9 原文本身沒有逐條寫。</p>',
+  sec:['drugs','atropine']},
+ {id:'B3',scene:'Atropine 已給到總量 3 mg，HR 還是 34。',
+  q:'關於「atropine 可能沒用」，下列哪些說法有指引原文支持？',multi:true,
+  opts:['寬 QRS 的高度房室阻斷：ERC 2025 明寫不要給 atropine','給到總量 3 mg 仍無效，可以繼續加倍劑量往上追','β-blocker／CCB 中毒造成的低血壓，可能對 atropine 沒反應（AHA 2025 Part 10）','AHA 2025 Part 9 推薦表有一條專門列出 atropine 無效的族群'],
+  ans:[0,2],
+  why:EN('Do not give atropine to patients with high-degree atrioventricular block and wide QRS.',S('erc','ERC25'))+
+   EN('patients may develop hypotension from β-adrenergic receptor antagonist (β-blocker) or calcium channel antagonist (CCB) poisoning that does not respond to atropine, standard vasopressors, or cardiac pacing…',S('p10','AHA25-P10 §21.1'))+
+   '<ul><li>Atropine 總量 3 mg。'+S('alg25','ALG25')+'「1–2 mg，每 5 分鐘加倍」在 Part 10 Table 4 只用於<strong>有機磷／carbamate</strong>。'+S('p10','AHA25-P10')+'</li>'+
+   '<li>AHA 2025 Part 9 的 5 條推薦裡，atropine 只有一條：血行不穩的急性過緩給 atropine '+C('2a','2a')+' '+L('B-NR')+S('aha25','AHA25 #2')+'；<strong>沒有逐條列出 atropine 無效的族群</strong>。</li></ul>'+
+   '<p>Atropine 無效 → 不要卡住，往下走：TCP 和／或 dopamine／epinephrine 滴注 '+C('2b','2b')+' '+L('C-LD')+S('aha25','AHA25 #4')+'。</p>',
+  sec:['atropine','recs']},
+ {id:'B4',scene:'Atropine 無效，病人仍低血壓、意識差。',
+  q:'依 AHA 2025，下一步？',
+  opts:['Isoproterenol 是 AHA 2025 algorithm 的首選第二線藥','依 AHA 2025 建議劑量推 push-dose epinephrine','TCP 和／或 dopamine 5–20 mcg/kg/min 或 epinephrine 2–10 mcg/min 滴注，同時準備經靜脈起搏','Epinephrine 5–20 mcg/kg/min 或 dopamine 2–10 mcg/min 滴注'],
+  ans:[2],
+  why:'<p>'+C('2b','2b')+' '+L('C-LD')+S('aha25','AHA25 #4')+'：atropine 無效 → IV adrenergic agonists（eg, epinephrine, dopamine）或 TCP，同時準備緊急經靜脈起搏。</p>'+
+   '<p>劑量：dopamine 5–20 mcg/kg/min（依反應調整，慢慢減量）；epinephrine 2–10 mcg/min（依反應調整）。'+S('alg25','ALG25')+'</p>'+
+   '<ul><li>Isoproterenol：2025 algorithm <strong>未列</strong>。（ERC 2025 有 isoprenaline。'+S('erc','ERC25')+'）</li>'+
+   '<li>Push-dose epi：AHA25 只說 "Studies on push-dose epinephrine for bradycardia specifically are lacking"，並提醒給藥錯誤，<strong>未提供劑量</strong>。'+S('aha25','AHA25')+'</li>'+
+   '<li>最後一個選項把兩個藥的劑量與單位對調了——是常見陷阱。</li></ul>'+
+   '<p>藥物還是 TCP？PrePACE 可行性研究：dopamine 與 TCP 出院存活無差異；選哪個 "will likely … depend on clinician experience and resources available"。'+S('aha25','AHA25')+'</p>'+
+   '<p>補充：高度 AVB 不穩又<strong>沒有 IV/IO</strong> → 立即 pacing '+C('2b','2b')+' '+L('C-EO')+S('aha25','AHA25 #5')+'</p>'+
+   '<p>泡法算術範例：epi 1 mg 稀釋成 250 mL → 4 mcg/mL；2–10 mcg/min ＝ 30–150 mL/h。實際依院內規範。'+INF('算術範例')+'</p>',
+  sec:['recs','drugs','tw']},
+ {id:'B5',scene:'你決定先上 TCP。病人還有意識，一直問「會不會痛」。',
+  q:'開始經皮起搏，下列哪些做法正確？',multi:true,
+  opts:['螢幕上看到 pacing spike，就代表已經 capture','清醒病人起搏會痛，考慮鎮靜止痛，之後頻繁再評估呼吸','速率與電流照 AHA 2025 指引規定的數字設定','每個 spike 後有寬 QRS 和 T 波之後，還要確認脈搏與起搏速率一致'],
+  ans:[1,3],
+  why:'<p><strong>會痛：</strong>"Transcutaneous pacing is often painful in the conscious patient and procedural tolerance may necessitate sedation."'+S('aha25','AHA25')+' 鎮靜後頻繁再評估呼吸。'+S('edu','RCUK-ch10')+' 具體藥物與劑量 '+TBC()+'（AHA 未給）</p>'+
+   '<p><strong>電 capture：</strong>每個 spike 後寬 QRS＋T 波。'+S('edu','RCUK-ch10')+S('edu','Doukky03')+' 2025 AHA 提醒偽 capture 常見。'+S('aha25','AHA25')+'</p>'+
+   '<p><strong>機械 capture：</strong>電 capture 之後，還要確認脈搏與起搏速率一致；AHA 2025 坦承電與機械 capture 都不容易確認。'+S('aha25','AHA25')+' 摸哪裡最好，AHA 2025 列為<strong>研究缺口</strong>；「摸股動脈、不要摸頸動脈」'+TBC()+'（Doukky03 反而寫 right carotid or right femoral）。</p>'+
+   '<p><strong>速率、電流：</strong>AHA 指引原文<strong>沒給數字</strong> '+TBC()+'。教材數字：速率 60–90/min、常見 50–100 mA 達電 capture'+S('edu','RCUK-ch10')+'；速率 70–80、最終設在閾值上 5–10 mA'+S('edu','Doukky03')+' '+INF('教材')+'</p>'+
+   '<p>電 capture 但摸不到脈搏＝PEA → CPR，CPR 時關掉 pacing。'+S('edu','RCUK-ch10')+'</p>'+
+   '<p><strong>接下來：</strong>TCP 是通往 TVP 的橋。藥物無效、持續血行不穩 → 經靜脈起搏 '+C('2a','2a')+' '+L('C-LD')+S('aha25','AHA25 #3')+'，立刻找專家。TVP 併發症不低（感染、氣胸等）。'+S('aha25','AHA25')+'</p>',
+  sec:['tcp','tvp','ten']}
+ ]},
+{id:'C',cls:'c-tox',title:'吞了一整排 β-blocker',sub:'中毒合併過緩休克：HDI COR 1；atropine、pacing 已不在 2025 中毒推薦表',
+ intro:'45 歲女性，被家人發現吞了一整排自己的 β-blocker（份量不明）。到院 HR 40、BP 70/40，意識模糊、四肢冰冷。已給氧、接監視器、建立 IV。',
+ steps:[
+ {id:'C1',scene:'團隊照一般流程先推了 atropine，HR 幾乎沒變。',
+  q:'關於 atropine 與 pacing，2025 AHA Part 10 的 β-blocker 推薦表怎麼寫？',
+  opts:['Atropine COR 2a，仍是首選','Pacing COR 1，應立即放經靜脈起搏','推薦表已沒有 atropine 與 pacing 這兩條；原文沒寫拿掉的理由','Atropine 改列為 COR 3 有害'],
+  ans:[2],
+  why:'<p>β-blocker、CCB 的 2025 推薦表都<strong>沒有</strong> atropine 與 pacing（2023 TOX23 β-blocker 時還是 '+C('2b','2b')+' '+L('C-LD')+'）。原文<strong>沒寫拿掉的理由</strong>。'+S('p10','AHA25-P10 §21.4')+S('tox23','TOX23')+'</p>'+
+   EN('patients may develop hypotension from β-adrenergic receptor antagonist (β-blocker) or calcium channel antagonist (CCB) poisoning that does not respond to atropine, standard vasopressors, or cardiac pacing but is amenable to targeted therapies, such as high-dose insulin.',S('p10','AHA25-P10 §21.1'))+
+   '<p>Digoxin 則明講刪除理由：atropine、pacing 已含在標準 ALS 處置中。'+S('p10','AHA25-P10 §21.8')+'</p>'+
+   '<p>教學上：心跳慢照 Part 9 流程走，但別把希望放在 atropine 和 pacing，盡早上 HDI、升壓劑、鈣等針對性治療。'+INF('推論・非指引原文')+'</p>',
+  sec:['tox','ten']},
+ {id:'C2',scene:'升壓劑已經在跑，血壓還是起不來。',
+  q:'2025 Part 10 對 β-blocker 中毒「升壓劑無效的低血壓」，哪一項是 COR 1？',
+  opts:['Glucagon','High-dose insulin（HDI）','Lipid emulsion（ILE）','Calcium'],
+  ans:[1],
+  why:'<p>β-blocker（Part 10 §21.4）：'+S('p10','AHA25-P10')+'</p><ul>'+
+   '<li>HDI 或 euglycemia therapy '+C('1','1')+' '+L('C-LD')+'</li>'+
+   '<li>Vasopressors '+C('1','1')+' '+L('C-EO')+'</li>'+
+   '<li>Glucagon bolus＋滴注 '+C('2a','2a')+' '+L('C-LD')+'</li>'+
+   '<li>ILE '+C('2b','2b')+' '+L('C-EO')+'（"usefulness … is uncertain"；TOX23 是 3 無益）</li>'+
+   '<li>Calcium '+C('2b','2b')+' '+L('C-EO')+'（Part 10 新列）</li></ul>',
+  sec:['tox','ten']},
+ {id:'C3',scene:'你決定上 HDI。',
+  q:'依 Part 10 Table 4（成人），HDI 怎麼給？',
+  opts:['Insulin 2–10 mg，預期會嘔吐','Regular insulin 1 U/kg bolus，維持 0.5 U/kg/h，不需特別監測血糖','跟高血糖急症一樣用一般劑量即可','Regular insulin 1 U/kg，維持 1–10 U/kg/h；監測低血糖、低血鉀、容積負荷'],
+  ans:[3],
+  why:'<p>Part 10 Table 4：1 U/kg，維持 1–10 U/kg/h；regular human insulin；監測低血糖、低血鉀、容積負荷。'+S('p10','AHA25-P10 Table 4')+'（TOX23 同）</p>'+
+   '<ul><li>「維持 0.5 U/kg/h、不需監測血糖」不是 Part 10 Table 4 的劑量：Table 4 維持量是 1–10 U/kg/h，且要監測低血糖、低血鉀、容積負荷。</li><li>「2–10 mg、預期嘔吐」是 glucagon。</li></ul>'+
+   EN('The ideal dose of most antidotes is not known and is often controversial. … Consult a medical or clinical toxicologist, regional poison center…',S('p10','AHA25-P10 Table 4'))+
+   '<p>毒藥物諮詢中心電話與時段 '+TBC()+'</p>',
+  sec:['tox','tw']},
+ {id:'C4',scene:'同時想加 glucagon 和鈣。',
+  q:'依 Part 10 Table 4（成人），哪個組合正確？',
+  opts:['Glucagon 1 mg（一支低血糖急救 kit 就夠）；10% CaCl₂ 6000 mg（60 mL）','Glucagon 3–10 mg、滴注 3–5 mg/h 是 2025 Part 10 的劑量','Glucagon 2–10 mg，維持 1–15 mg/h，預期嘔吐；10% CaCl₂ 2000 mg（20 mL），維持 0.2–0.4 mL/kg/h','10% Ca gluconate 2000 mg（20 mL）和 10% CaCl₂ 2000 mg 等量'],
+  ans:[2],
+  why:'<ul><li>Glucagon：2–10 mg，維持 1–15 mg/h；預期嘔吐。'+S('p10','AHA25-P10 Table 4')+'</li>'+
+   '<li>10% CaCl₂：2000 mg（20 mL），維持 0.2–0.4 mL/kg/h；ionized Ca 不超過正常上限 1.5–2 倍；建議中心靜脈。適應症含 <strong>β-blockers</strong>（TOX23 只列 CCBs）。</li>'+
+   '<li>10% Ca gluconate：6000 mg（60 mL），維持 0.6–1.2 mL/kg/h。</li>'+
+   '<li>「3–10 mg、滴注 3–5 mg/h」不是 Part 10 Table 4 的 glucagon 劑量；Table 4 是 2–10 mg，維持 1–15 mg/h。</li></ul>'+
+   '<p>院內 glucagon 若是 1 mg 的低血糖急救 kit，2–10 mg 需要多支——先確認庫存。'+INF('推論')+'</p>',
+  sec:['tox','tw']},
+ {id:'C5',scene:'交班時學弟問：「如果她吞的是 CCB 呢？」',
+  q:'2025 Part 10 的 CCB 推薦表，哪個敘述正確？',
+  opts:['Glucagon COR 1，是 CCB 的首選','HDI COR 1；calcium COR 2a；glucagon COR 2b（usefulness is uncertain）','Atropine 仍是 COR 2a（血行顯著的過緩）','Lipid emulsion 列為 COR 3 無益'],
+  ans:[1],
+  why:'<p>CCB（Part 10 §21.5）：'+S('p10','AHA25-P10')+'</p><ul>'+
+   '<li>HDI '+C('1','1')+' '+L('B-NR')+'、Vasopressors '+C('1','1')+' '+L('C-LD')+'</li>'+
+   '<li>Calcium '+C('2a','2a')+' '+L('C-EO')+'</li>'+
+   '<li>Glucagon '+C('2b','2b')+' '+L('C-EO')+'（β-blocker 是 2a）</li>'+
+   '<li>ECLS（藥物無效）'+C('2a','2a')+' '+L('B-NR')+'；methylene blue（難治血管擴張性休克）'+C('2b','2b')+' '+L('C-EO')+'</li>'+
+   '<li>ILE '+C('2b','2b')+' '+L('C-EO')+'——「3 無益」是 TOX23 的舊等級。'+S('tox23','TOX23')+'</li>'+
+   '<li>Atropine 2a、pacing 2b 是 TOX23；2025 推薦表<strong>已無</strong>。</li></ul>'+
+   '<p>回到這位 β-blocker 病人：若藥物都無效、心因性休克 → ECLS '+C('2a','2a')+' '+L('C-LD')+'。Hemodialysis 只針對 atenolol、nadolol、sotalol '+C('2b','2b')+' '+L('C-LD')+'。'+S('p10','AHA25-P10 §21.4')+'</p>',
+  sec:['tox','ten']}
+ ]},
+{id:'D',cls:'c-warn',title:'少洗一次腎的寬 QRS',sub:'可逆病因：高血鉀與其他',
+ intro:'72 歲規律洗腎病人，這週少洗一次，今天全身無力被送來。HR 38、寬 QRS、BP 85/50，意識清楚但很喘。血鉀報告還沒出來。',
+ steps:[
+ {id:'D1',scene:'團隊一邊給氧、接監視器。',
+  q:'AHA 2025 要你同時想的一件事是？',
+  opts:['心跳慢一定是主因，把心跳拉起來就好','等血鉀報告出來再決定要不要處理','這個慢是另一個疾病的表現，還是這次症狀的主因？同時評估並處理可逆病因','可逆病因評估只適用於穩定病人'],
+  ans:[2],
+  why:'<p>AHA 要求先判斷心跳慢是 "a manifestation of another underlying disease process … or the primary driver of the clinical presentation"。'+S('aha25','AHA25')+'</p>'+
+   '<p>評估並治療可逆病因 '+C('1','1')+' '+L('C-EO')+S('aha25','AHA25 #1')+'："Bradycardia may be difficult to resolve without addressing the underlying cause(s)…"</p>'+
+   '<p>Algorithm 側欄 Possible Causes：心肌缺血／梗塞；藥物毒物（CCB、β-blocker、digoxin）；缺氧；電解質（高血鉀）。'+S('alg25','ALG25')+'</p><p>不穩定就照 Box 3–5 處理，<strong>一邊穩定、一邊找原因</strong>。</p>',
+  sec:['causes','define','ten']},
+ {id:'D2',scene:'血鉀報告回來：明顯偏高。',
+  q:'關於「有脈搏」的心搏過緩合併高血鉀，AHA 2025 怎麼寫？',
+  opts:['Part 10 給鈣 COR 1，適用所有高血鉀心律不整','Part 10 的高血鉀推薦（鈣、bicarbonate、insulin＋glucose）只適用心跳停止；有脈搏時怎麼治、劑量多少，AHA 2025 沒寫','2025 新增 insulin＋glucose COR 1，用於有脈搏的高血鉀','高血鉀不在 algorithm 的可能病因裡'],
+  ans:[1],
+  why:EN('These recommendations are only applicable to the management of adults and children in cardiac arrest from hyperkalemia…',S('p10','AHA25-P10 §15'))+
+   '<p>心跳停止時：鈣 '+C('2b','2b')+' '+L('C-LD')+'、bicarbonate '+C('2b','2b')+' '+L('C-EO')+'、insulin＋glucose '+C('2b','2b')+' '+L('C-EO')+'。</p>'+
+   '<p>有脈搏的過緩合併高血鉀怎麼治、劑量多少：AHA 2025 沒有寫，本題組不給劑量 '+TBC('待查證／範圍外')+'。實際處置請依院內規範與其他專科指引。</p>'+
+   '<p>高血鉀<strong>有</strong>列在 algorithm 側欄的可能病因。'+S('alg25','ALG25')+'</p>',
+  sec:['causes']},
+ {id:'D3',scene:'處置過程中仍失代償，團隊上了 TCP，電流往上調仍抓不到 capture。',
+  q:'依學員版整理的教材，哪些因素可能讓 capture 失敗？',multi:true,
+  opts:['高血鉀','病人意識清楚','缺氧、酸中毒、心肌缺血（提高起搏閾值）','心包積液、氣胸、正壓通氣（增加胸腔阻抗）'],
+  ans:[0,2,3],
+  why:'<ul><li>高血鉀可能讓 pacing 失敗。'+S('edu','RCUK-ch10')+'</li>'+
+   '<li>缺氧、酸中毒、心肌缺血會提高起搏閾值。'+S('edu','Doukky03')+'</li>'+
+   '<li>心包積液、氣胸、正壓通氣會增加胸腔阻抗。'+S('edu','Doukky03')+'</li></ul>'+
+   '<p>以上是教材整理 '+INF('教材')+'。指引本身寫的是：缺氧與初始非心搏過緩節律，和 pacing 失敗、死亡率增加有關（Smida 2024）。'+S('aha25','AHA25')+'</p>'+
+   '<p>意識清楚不影響 capture，但代表起搏會痛 → 鎮靜止痛。'+S('aha25','AHA25')+'</p>',
+  sec:['tcp','changes']},
+ {id:'D4',scene:'同一班，隔壁床：急性下壁 MI，出現房室阻斷合併低血壓。',
+  q:'依 AHA 2025 algorithm 與推薦，這床怎麼想最正確？',
+  opts:['MI 造成的過緩不適用 bradycardia algorithm，先等導管室就好','心肌缺血／梗塞是 algorithm 列的可能病因：一邊照失代償支穩定（atropine → TCP／滴注 → TVP），一邊處理病因','Atropine 無效就沒有其他選項，只能等','經皮起搏只有在 IV 打不上時才能用'],
+  ans:[1],
+  why:'<p>Algorithm 側欄 Possible Causes 第一項就是心肌缺血／梗塞。'+S('alg25','ALG25')+' 評估並治療可逆病因 '+C('1','1')+' '+L('C-EO')+S('aha25','AHA25 #1')+'："Bradycardia may be difficult to resolve without addressing the underlying cause(s)…"</p>'+
+   '<ul><li>有失代償就照 Box 3–5：atropine '+C('2a','2a')+' '+L('B-NR')+S('aha25','AHA25 #2')+'。</li>'+
+   '<li>Atropine 無效 → epinephrine／dopamine 滴注<strong>或</strong> TCP '+C('2b','2b')+' '+L('C-LD')+'，同時準備 TVP。'+S('aha25','AHA25 #4')+'</li>'+
+   '<li>藥物無效、持續血行不穩 → TVP '+C('2a','2a')+' '+L('C-LD')+S('aha25','AHA25 #3')+'；Box 6 考慮專家照會。'+S('alg25','ALG25 Box 6')+'</li>'+
+   '<li>「IV 打不上才 pace」是誤解：推薦 5 是高度 AVB 不穩<strong>又</strong>沒有 IV/IO 時考慮立即 pacing '+C('2b','2b')+' '+L('C-EO')+S('aha25','AHA25 #5')+'，不是 TCP 的唯一適應症。</li></ul>'+
+   '<p><strong>一邊穩定、一邊找原因。</strong></p>',
+  sec:['causes','recs','flow']}
+ ]}
+];
+
+/* ===== 狀態 ===== */
+var KEY='brady25-cases-v1', TKEY='brady25-theme';
+var FLAT=[]; CASES.forEach(function(c,ci){c.steps.forEach(function(s,si){FLAT.push({c:ci,s:si,q:s});});});
+var TOTAL=FLAT.length;
+var host=/[?&]mode=host\b/.test(location.search);
+var store=load();
+var cur={c:0,s:0}, sel=[], revealed=false;
+
+function load(){try{var o=JSON.parse(localStorage.getItem(KEY)||'{}');return (o&&o.a)?o:{a:{}};}catch(e){return {a:{}};}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(store));}catch(e){}}
+function same(a,b){if(a.length!==b.length)return false;var x=a.slice().sort(),y=b.slice().sort();for(var i=0;i<x.length;i++)if(x[i]!==y[i])return false;return true;}
+function tally(){var n=0,ok=0;FLAT.forEach(function(f){var r=store.a[f.q.id];if(r){n++;if(r.ok)ok++;}});return {n:n,ok:ok};}
+var $=function(id){return document.getElementById(id);};
+var MK=['A','B','C','D','E'];
+
+/* ===== 主題 ===== */
+var themes=['auto','light','dark'], tnames={auto:'◐ 自動',light:'☀ 淺色',dark:'☾ 深色'};
+function applyTheme(t){if(t==='auto')document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme',t);$('themeBtn').textContent=tnames[t];}
+var theme='auto';try{theme=localStorage.getItem(TKEY)||'auto';}catch(e){}
+if(themes.indexOf(theme)<0)theme='auto';
+applyTheme(theme);
+$('themeBtn').addEventListener('click',function(){theme=themes[(themes.indexOf(theme)+1)%3];try{localStorage.setItem(TKEY,theme);}catch(e){}applyTheme(theme);});
+
+/* ===== 畫面切換 ===== */
+function show(v){['vHome','vPlay','vResult'].forEach(function(id){$(id).hidden=(id!==v);});window.scrollTo(0,0);}
+function updBar(){if(host){$('scoreBar').textContent='講者模式';return;}var t=tally();$('scoreBar').textContent='答對 '+t.ok+'/'+t.n+' · 進度 '+t.n+'/'+TOTAL;}
+
+function renderHome(){
+  var h='';
+  CASES.forEach(function(c,ci){
+    var done=0,bars='';
+    c.steps.forEach(function(s){var r=store.a[s.id];if(r)done++;bars+='<i class="'+(host?'':(r?(r.ok?'ok':'no'):''))+'"></i>';});
+    h+='<button type="button" class="ccard '+c.cls+'" data-case="'+ci+'"><span class="no">CASE '+(ci+1)+' · '+c.steps.length+' 個決策點</span><h3>'+c.title+'</h3><p>'+c.sub+'</p>'+
+       (host?'':'<span class="prog" aria-hidden="true">'+bars+'</span><span class="prog-t">已作答 '+done+' / '+c.steps.length+'</span>')+'</button>';
+  });
+  $('caseList').innerHTML=h;
+  Array.prototype.forEach.call(document.querySelectorAll('[data-case]'),function(b){b.addEventListener('click',function(){startCase(+b.getAttribute('data-case'));});});
+  var t=tally();
+  $('resumeBtn').textContent=host?'從 Case 1 開始':(t.n===0?'從頭開始':(t.n===TOTAL?'看結算':'繼續作答'));
+  $('resultBtn').hidden=host;
+  $('modeRow').innerHTML=host?
+    '<a class="pbtn ghost" href="'+location.pathname+'">切回自學模式</a>':
+    '<a class="pbtn ghost" href="?mode=host">講者模式（投影用）</a>';
+  updBar();
+}
+
+function startCase(ci){
+  var c=CASES[ci], si=0;
+  if(!host){for(si=0;si<c.steps.length;si++){if(!store.a[c.steps[si].id])break;} if(si>=c.steps.length)si=0;}
+  go(ci,si);
+}
+function go(ci,si){cur={c:ci,s:si};sel=[];revealed=false;renderQ();show('vPlay');}
+
+function flatIdx(){for(var i=0;i<FLAT.length;i++)if(FLAT[i].c===cur.c&&FLAT[i].s===cur.s)return i;return 0;}
+
+function renderQ(){
+  var c=CASES[cur.c], q=c.steps[cur.s], rec=host?null:store.a[q.id];
+  $('caseNo').textContent='CASE '+(cur.c+1)+' / '+CASES.length;
+  $('caseTitle').textContent=c.title;
+  // timeline (unfolding)
+  var tl='<li'+(cur.s===0?'':'')+'><span class="tl">病人</span>'+c.intro+'</li>';
+  for(var i=0;i<=cur.s;i++){tl+='<li class="'+(i===cur.s?'now':'')+'"><span class="tl">決策點 '+(i+1)+'</span>'+c.steps[i].scene+'</li>';}
+  $('timeline').innerHTML=tl;
+  // question
+  var answered=!!rec || (host&&revealed);
+  var h='<div class="qmeta"><span>'+q.id+' · 決策點 '+(cur.s+1)+' / '+c.steps.length+(host?' · 全場 '+(flatIdx()+1)+' / '+TOTAL:'')+'</span>'+(q.multi?'<span class="multi">多選：選出所有正確答案</span>':'<span>單選</span>')+'</div>';
+  h+='<p class="qtext">'+q.q+'</p><div class="opts" role="group" aria-label="選項">';
+  var picked=rec?rec.p:sel;
+  q.opts.forEach(function(o,i){
+    var cls='opt'+(q.multi?' multi':''), flag='';
+    if(answered){
+      var isAns=q.ans.indexOf(i)>=0, isPick=picked.indexOf(i)>=0;
+      if(isAns&&(isPick||host)){cls+=' right';flag='<span class="flag">✓ 正確答案</span>';}
+      else if(isAns){cls+=' right missed';flag='<span class="flag">✓ 正確答案（你沒選）</span>';}
+      else if(isPick){cls+=' wrong';flag='<span class="flag">'+(host?'✗ 標記的選項':'✗ 你的選擇')+'</span>';}
+    }else if(sel.indexOf(i)>=0)cls+=' sel';
+    h+='<button type="button" class="'+cls+'" data-i="'+i+'"'+(answered?' aria-disabled="true"':'')+(q.multi?' aria-pressed="'+(picked.indexOf(i)>=0)+'"':'')+'><span class="mk">'+MK[i]+'</span><span>'+o+flag+'</span></button>';
+  });
+  h+='</div>';
+  if(answered){
+    var ok=host?null:rec.ok;
+    h+='<div class="fb" id="fb">'+(host?'<span class="verdict ok">答案：'+q.ans.map(function(a){return MK[a];}).join('、')+'</span>':
+      '<span class="verdict '+(ok?'ok':'no')+'">'+(ok?'✓ 答對了':'✗ 再想一下')+'</span>')+
+      '<div class="why">'+q.why+'</div>'+
+      '<div class="secs">出處（學員版）：'+q.sec.map(function(s){return '<a href="'+BASE+'#'+s+'" target="_blank" rel="noopener">#'+s+' '+(SECN[s]||'')+'</a>';}).join('')+'</div></div>';
+  }
+  $('qcard').innerHTML=h;
+  // nav
+  var n='', last=(cur.s===c.steps.length-1), fi=flatIdx();
+  if(host){
+    n+='<button type="button" class="pbtn ghost" id="bPrev"'+(fi===0?' disabled':'')+'>← 上一題</button>';
+    n+=revealed?'':'<button type="button" class="pbtn" id="bReveal">揭曉答案</button>';
+    n+=(fi===TOTAL-1)?'<button type="button" class="pbtn ghost" id="bTen">十句話 →</button>':'<button type="button" class="pbtn'+(revealed?'':' ghost')+'" id="bNext">下一題 →</button>';
+  }else if(!answered){
+    if(q.multi)n+='<button type="button" class="pbtn" id="bSubmit"'+(sel.length?'':' disabled')+'>送出答案</button>';
+    else n+='<span class="hint">點一個選項作答。</span>';
+  }else{
+    if(cur.s>0)n+='<button type="button" class="pbtn ghost" id="bPrev">← 上一題</button>';
+    n+=last?'<button type="button" class="pbtn" id="bCaseEnd">'+(cur.c<CASES.length-1?'下一個病例 →':'看結算 →')+'</button>':'<button type="button" class="pbtn" id="bNext">下一題 →</button>';
+  }
+  $('qnav').innerHTML=n;
+  $('hostHint').hidden=!host;
+  bind();
+  updBar();
+}
+
+function bind(){
+  var q=CASES[cur.c].steps[cur.s];
+  Array.prototype.forEach.call(document.querySelectorAll('#qcard .opt'),function(b){b.addEventListener('click',function(){clickOpt(+b.getAttribute('data-i'));});});
+  var e;
+  if((e=$('bSubmit')))e.addEventListener('click',submit);
+  if((e=$('bReveal')))e.addEventListener('click',reveal);
+  if((e=$('bNext')))e.addEventListener('click',next);
+  if((e=$('bPrev')))e.addEventListener('click',prev);
+  if((e=$('bCaseEnd')))e.addEventListener('click',function(){if(cur.c<CASES.length-1)startCase(cur.c+1);else showResult();});
+  if((e=$('bTen')))e.addEventListener('click',showTen);
+}
+function clickOpt(i){
+  var q=CASES[cur.c].steps[cur.s];
+  if(host){if(revealed)return;var k=sel.indexOf(i);if(k>=0)sel.splice(k,1);else{if(!q.multi)sel=[];sel.push(i);}renderQ();return;}
+  if(store.a[q.id])return;
+  if(q.multi){var j=sel.indexOf(i);if(j>=0)sel.splice(j,1);else sel.push(i);renderQ();return;}
+  sel=[i];submit();
+}
+function submit(){
+  var q=CASES[cur.c].steps[cur.s];
+  if(!sel.length||store.a[q.id])return;
+  store.a[q.id]={p:sel.slice(),ok:same(sel,q.ans)};save();
+  renderQ();
+  var fb=$('fb');if(fb&&fb.scrollIntoView)fb.scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+function reveal(){revealed=true;renderQ();}
+function next(){
+  var fi=flatIdx();
+  if(host){if(!revealed){reveal();return;}if(fi<TOTAL-1){var f=FLAT[fi+1];go(f.c,f.s);}else showTen();return;}
+  if(cur.s<CASES[cur.c].steps.length-1)go(cur.c,cur.s+1);
+}
+function prev(){
+  if(host){var fi=flatIdx();if(fi>0){var f=FLAT[fi-1];go(f.c,f.s);}return;}
+  if(cur.s>0)go(cur.c,cur.s-1);
+}
+function showTen(){showResult();}
+
+function showResult(){
+  var t=tally();
+  $('stats').hidden=host; $('review').hidden=host;
+  document.querySelector('#vResult h2').textContent=host?'帶走這十句話':'你的成績';
+  Array.prototype.forEach.call(document.querySelectorAll('#vResult h3'),function(h){if(h.id!=='tenH')h.hidden=host;});
+  var pct=t.n?Math.round(t.ok/t.n*100):0;
+  var st='<div class="stat"><span class="big">'+t.ok+'<span style="font-size:.45em;color:var(--ink-3)"> / '+TOTAL+'</span></span><span class="l">答對題數</span></div>'+
+         '<div class="stat"><span class="n">'+t.n+' / '+TOTAL+'</span><span class="l">已作答</span></div>'+
+         '<div class="stat"><span class="n">'+pct+'%</span><span class="l">已作答題目的正確率</span></div>';
+  CASES.forEach(function(c,ci){var ok=0,n=0;c.steps.forEach(function(s){var r=store.a[s.id];if(r){n++;if(r.ok)ok++;}});st+='<div class="stat"><span class="n">'+ok+' / '+c.steps.length+'</span><span class="l">Case '+(ci+1)+' '+c.title+'</span></div>';});
+  $('stats').innerHTML=st;
+  var rv='';
+  FLAT.forEach(function(f){
+    var q=f.q, r=store.a[q.id], cls=r?(r.ok?'ok':'no'):'na';
+    rv+='<li class="'+cls+'"><div class="rh"><span class="rid">'+q.id+' · Case '+(f.c+1)+'</span><span class="mark">'+(r?(r.ok?'✓ 答對':'✗ 答錯'):'— 未作答')+'</span></div>'+
+        '<span>'+q.q+'</span><span class="ans">正確答案：'+q.ans.map(function(a){return MK[a]+'. '+q.opts[a];}).join('；')+'</span>'+
+        '<span class="row"><button type="button" class="ibtn" data-go="'+f.c+','+f.s+'">'+(r?'看解說':'去作答')+'</button>'+
+        q.sec.map(function(s){return '<a class="ibtn" href="'+BASE+'#'+s+'" target="_blank" rel="noopener">#'+s+'</a>';}).join('')+'</span></li>';
+  });
+  $('review').innerHTML=rv;
+  Array.prototype.forEach.call(document.querySelectorAll('[data-go]'),function(b){b.addEventListener('click',function(){var p=b.getAttribute('data-go').split(',');go(+p[0],+p[1]);});});
+  $('resetBtn').hidden=host;
+  show('vResult'); updBar();
+}
+
+/* ===== 事件 ===== */
+$('homeBtn').addEventListener('click',function(){renderHome();show('vHome');});
+$('backHome2').addEventListener('click',function(){renderHome();show('vHome');});
+$('resultBtn').addEventListener('click',showResult);
+$('resumeBtn').addEventListener('click',function(){
+  if(host){go(0,0);return;}
+  var t=tally(); if(t.n===TOTAL){showResult();return;}
+  for(var i=0;i<FLAT.length;i++){if(!store.a[FLAT[i].q.id]){go(FLAT[i].c,FLAT[i].s);return;}}
+});
+$('resetBtn').addEventListener('click',function(){if(confirm('確定清除所有作答紀錄？')){store={a:{}};save();renderHome();show('vHome');}});
+document.addEventListener('keydown',function(e){
+  if(!host||e.metaKey||e.ctrlKey||e.altKey)return;
+  var tag=(e.target&&e.target.tagName)||'';
+  if(e.key==='h'||e.key==='H'){renderHome();show('vHome');return;}
+  if($('vPlay').hidden)return;
+  if(e.key===' '||e.key==='Enter'){if(tag==='BUTTON'||tag==='A')return;e.preventDefault();if(!revealed)reveal();else next();}
+  else if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();next();}
+  else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();prev();}
+  else if(/^[1-4]$/.test(e.key)){clickOpt(+e.key-1);}
+});
+
+if(host){
+  document.body.classList.add('host');
+  $('brand').textContent='Brady 2025 · 講者模式';
+  $('modeDek').textContent='講者模式：大字投影，學員先舉手或用自己手機作答，再按「揭曉答案」（空白鍵）。方向鍵切換題目，1–4 鍵可先標記全場多數的選項。不計分。';
+}
+renderHome();
+// self-test hook (headless 驗收用)
+window.__BRADY={CASES:CASES,FLAT:FLAT,go:go,submitPick:function(arr){sel=arr.slice();submit();},showResult:showResult,reveal:reveal,next:next};
+})();
+</script>
+</body>
+</html>
